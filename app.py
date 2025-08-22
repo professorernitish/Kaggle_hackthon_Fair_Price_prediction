@@ -34,9 +34,10 @@ input_data = pd.DataFrame({
 })
 
 # Predict fare with condition
-if trip_distance == 0 and trip_duration_minutes == 0:
+
+
+
+if trip_distance == 0 or trip_duration_minutes == 0:
     predicted_fare = [0]
 else:
     predicted_fare = model.predict(input_data)
-
-st.write(f"### Predicted Fare Amount: ${predicted_fare[0]:.2f}")
